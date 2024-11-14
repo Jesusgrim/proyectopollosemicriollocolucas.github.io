@@ -1,0 +1,248 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <link rel="icon" href="img/escudo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Grado - Producción de Pollos Semicriollos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+   /* Estilos de la tabla */
+   .tabla-container {
+            width: calc(200% - 10cm); /* Deja 5 cm de margen a cada lado */
+            margin: 20px auto;
+            display: none; /* Oculta la tabla por defecto */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #b5e9c2;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            width: 50cm; /* Ancho de cada columna */
+            padding: 5px;
+            text-align: center;
+        }
+        th {
+            background-color: #33c533;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        td {
+            border-bottom: 2px solid #f0e0e0;
+        }
+        tr:hover {
+            background:linear-gradient(to bottom, rgb(51, 226, 66), #8de4ae);
+        }
+        .highlight {
+            background-color: #d6f5e1;
+        }
+        .full-width {
+            background:linear-gradient(to bottom, rgb(51, 226, 66), #8de4ae);
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="img/escudo2.png" alt="Escudo del Colegio" class="header-image">
+    <div class="header-title">
+        <h1>Producción de Pollos Semicriollos</h1>
+    </div>
+    <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+    </div>
+</header>
+<nav>
+    <button onclick="openSection('inicio')">Inicio</button>
+    <button onclick="openSection('objetivos')">Objetivos</button>
+    <button onclick="openSection('suministro')">Suministro de Comida</button>
+    <button onclick="openSection('cronograma')">Cronograma</button>
+    <button onclick="openSection('presupuesto')">Presupuesto</button>
+    <button onclick="openSection('anexos')">Anexos</button>
+</nav>
+
+<main>
+    <section id="inicio" class="content-section visible"> 
+        <h2>Información del Proyecto</h2>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="img/image6.png" alt="Imagen del Proyecto">
+            <p>Esta iniciativa nace con el fin de proporcionar un balance entre el polo semicriollo, el cual es alimentado con rumiante, cuchuco de maíz, concentrado, desechos de cocina (cáscaras, restos de comida...) y otros productos, y el de engorde que se alimenta a base de solo concentrado durante su ciclo de vida. Además, se ha visto reflejado el incremento de este en el sector (Vereda Judad), donde con buenas prácticas en instalaciones (techo, paredes, bebederos y comederos), junto con su alimentación, se busca llevar a cabo una buena explotación.</p>
+            <img src="img/image7.png" alt="Segunda imagen del Proyecto">
+            <p>El enfoque principal de este proyecto es producir pollos semicriollos en la finca Llano de San Juan de la vereda Judad, llevando unos registros adecuados, especialmente en períodos cortos, como por ejemplo semanales de su peso y ración, y un óptimo mantenimiento de sus instalaciones, haciendo limpieza de su materia fecal (pollinaza) cada período.</p>
+        </div>
+    </section>
+
+    <section id="objetivos" class="content-section">
+        <h2>Objetivos del Proyecto</h2>
+        <h3>Objetivo General</h3>
+        <p>Producir pollos semicriollos de alta calidad mediante prácticas sostenibles, asegurando el balance entre alimentación natural y cuidado óptimo en la finca.</p>
+
+        <h4>Objetivos Específicos</h4>
+        <ul class="objetivos-list">
+            <li>Registrar de manera detallada el peso y ración semanal de los pollos para controlar el crecimiento de manera óptima.</li>
+            <li>Implementar prácticas de limpieza en las instalaciones, eliminando la materia fecal periódicamente.</li>
+            <li>Usar una alimentación variada que incluya rumiantes, maíz y otros nutrientes para una crianza balanceada.</li>
+        </ul>
+        
+        <!-- Contenedor del video -->
+        <div class="video-container">   
+            <video controls>            
+                <source src="video/pollos.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </section>
+
+    <section id="suministro" class="content-section"class="tabla-container" id="tablaSuministro">
+                <h1>Informe  de Suministro de Comida</h1>
+                
+                <table id="budgetTable">
+                        <tr>
+                            <th>Mes</th>
+                            <th>Semana</th>
+                            <th>Tipo de Alimento</th>
+                            <th>Cantidad Suministrada (kg)</th>
+                            <th>Porcentaje de Proteína</th>
+                            <th>Número de Raciones</th>
+                            <th>Momento del Día</th>
+                        </tr>
+                        <tr class="full-width">
+                            <td colspan="7">Primera Cochada de Pollos</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td>Enero</td>
+                            <td>Semana 1</td>
+                            <td>Pre-iniciador</td>
+                            <td>150</td>
+                            <td>22%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr>
+                            <td>Enero</td>
+                            <td>Semana 2</td>
+                            <td>Pre-iniciador</td>
+                            <td>160</td>
+                            <td>22%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td>Enero</td>
+                            <td>Semana 3</td>
+                            <td>Iniciador</td>
+                            <td>180</td>
+                            <td>20%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr>
+                            <td>Enero</td>
+                            <td>Semana 4</td>
+                            <td>Iniciador</td>
+                            <td>190</td>
+                            <td>20%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr class="full-width">
+                            <td colspan="7">Segunda Cochada de Pollos</td>
+                        </tr>
+                        <!-- Febrero -->
+                        <tr class="highlight">
+                            <td>Febrero</td>
+                            <td>Semana 1</td>
+                            <td>Iniciador</td>
+                            <td>200</td>
+                            <td>20%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr>
+                            <td>Febrero</td>
+                            <td>Semana 2</td>
+                            <td>Desarrollador</td>
+                            <td>220</td>
+                            <td>18%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td>Febrero</td>
+                            <td>Semana 3</td>
+                            <td>Desarrollador</td>
+                            <td>230</td>
+                            <td>18%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                        <tr>
+                            <td>Febrero</td>
+                            <td>Semana 4</td>
+                            <td>Engordador</td>
+                            <td>250</td>
+                            <td>16%</td>
+                            <td>3</td>
+                            <td>Mañana, Tarde, Noche</td>
+                        </tr>
+                    </table>
+        
+</section>
+<section id="cronograma" class="side-images">
+        <img src="img/cronograma.png" alt="Cronograma de Actividades" width="100%">
+</section>
+<section id="presupuesto" class="content-section">
+    <h2>Presupuesto</h2>
+    <p>Información sobre el presupuesto estimado.</p>
+</section>
+<section id="anexos" class="content-section">
+    <h2>Anexos</h2>
+    <p>Documentos anexos al proyecto.</p>
+</section>
+
+    <!-- Otros contenidos de las secciones -->
+</main>
+
+
+<footer>
+    <img src="img/escudopie.png" alt="Escudo del Colegio" class="footer-image">
+    <div class="footer-content">
+        <div class="footer-text">Prom 2024</div>
+        <div class="footer-subtext">Los pollos criados con amor y cuidado se convierten en un tesoro a la hora de consumir</div>
+        <div class="footer-subtext">Innovadora y Estudiante a cargo del proyecto Valentina Niño</div>
+    </div>
+    <!-- Aquí agregamos el reCAPTCHA -->
+    <div class="footer-recaptcha">
+        <div class="g-recaptcha" data-sitekey="TU-SITE-KEY"></div>
+    </div>
+</footer>
+<!-- Franja pequeña con el mensaje de exalumno -->
+<div class="footer-small">
+    © Página elaborada por un exalumno de la Prom2023
+</div>
+<script>
+    function openSection(sectionId) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.classList.remove('visible'));
+        document.getElementById(sectionId).classList.add('visible');
+    }
+</script>
+
+</body>
+</html>
